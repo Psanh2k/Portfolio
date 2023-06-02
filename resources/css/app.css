@@ -22,7 +22,7 @@
     }
 
     .section-title {
-        @apply text-3xl lg:text-4xl .font-medium lg:font-extrabold mb-5;
+        @apply text-3xl lg:text-4xl lg:font-extrabold mb-5;
     }
 
     .subtitle {
