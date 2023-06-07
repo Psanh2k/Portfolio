@@ -17,7 +17,7 @@
                         <i>1 minute ago</i>
                     </div>
                     <div>
-                        <img src="https://portfolio.me/img/text.jpeg" alt="image">
+                        <img src="img/text.jpeg" alt="image">
                         <p class="pt-6">130 Start 333333333333333333333s3333333Dignissimos eum incidunt mollitia obcaecati hic harum expedita!12312312312312312312312asdas</p>
                     </div>
                     <div class="mt-5">
@@ -31,7 +31,7 @@
                         <i>1 minute ago</i>
                     </div>
                     <div>
-                        <img src="https://portfolio.me/img/text.jpeg" alt="image">
+                        <img src="img/text.jpeg" alt="image">
                         <p class="pt-6">130 Start 333333333333333333333s3333333Dignissimos eum incidunt mollitia obcaecati hic harum expedita!12312312312312312312312asdas</p>
                     </div>
                     <div class="mt-5">
@@ -45,7 +45,7 @@
                         <i>1 minute ago</i>
                     </div>
                     <div>
-                        <img src="https://portfolio.me/img/text.jpeg" alt="image">
+                        <img src="img/text.jpeg" alt="image">
                         <p class="pt-6">130 Start 333333333333333333333s3333333Dignissimos eum incidunt mollitia obcaecati hic harum expedita!12312312312312312312312asdas</p>
                     </div>
                     <div class="mt-5">
@@ -59,7 +59,7 @@
                         <i>1 minute ago</i>
                     </div>
                     <div>
-                        <img src="https://portfolio.me/img/text.jpeg" alt="image">
+                        <img src="img/text.jpeg" alt="image">
                         <p class="pt-6">130 Start 333333333333333333333s3333333Dignissimos eum incidunt mollitia obcaecati hic harum expedita!12312312312312312312312asdas</p>
                     </div>
                     <div class="mt-5">
@@ -73,7 +73,7 @@
                         <i>1 minute ago</i>
                     </div>
                     <div>
-                        <img src="https://portfolio.me/img/text.jpeg" alt="image">
+                        <img src="img/text.jpeg" alt="image">
                         <p class="pt-6">130 Start 333333333333333333333s3333333Dignissimos eum incidunt mollitia obcaecati hic harum expedita!12312312312312312312312asdas</p>
                     </div>
                     <div class="mt-5">

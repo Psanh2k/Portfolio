@@ -23,7 +23,7 @@
                     </button>
                 </div>
                 <div class="flex flex-1 justify-center items-center h-full rounded-lg mt-8 md:mt-0">
-                    <img class="p-2 lg:h-[45vh] rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="https://portfolio.me/img/avatar.jpg" alt="avatar">
+                    <img class="p-2 lg:h-[45vh] rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="img/avatar.jpg" alt="avatar">
                 </div>
             </div>
         </div>
