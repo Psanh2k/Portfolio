@@ -1,6 +1,6 @@
 <template>
     <section class="section bg-light-sencondary dark:bg-dark-secondary">
-        <div id="news" class="container mx-auto">
+        <div v-motion :initial="{opacity:0, y:100,}" :visible="{opacity:1, y:0,}"  id="news" class="container mx-auto">
             <div class="flex flex-col items-center text-center">
                 <h1 class="section-title mb-11">
                     News

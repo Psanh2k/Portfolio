@@ -1,6 +1,6 @@
 <template>
     <section id="home" class="lg:h-[85vh] flex items-center bg-light-primary dark:bg-dark-primary py-32 lg:py-0 overflow-hidden">
-        <div class="container mx-auto h-full">
+        <div v-motion :initial="{opacity:0, y:100,}" :visible="{opacity:1, y:0,}" class="container mx-auto h-full">
             <div class="flex flex-col mt-14">
                 <div class="flex flex-col md:flex-row items-center h-full pt-8">
                     <div class="flex-1 flex flex-col lg:items-start">
