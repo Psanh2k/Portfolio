@@ -1,13 +1,10 @@
 <template>
     <section class="section bg-light-sencondary dark:bg-dark-secondary">
-        <div class="container mx-auto">
+        <div id="news" class="container mx-auto">
             <div class="flex flex-col items-center text-center">
-                <h2 class="section-title">
-                    What I do for Clients
-                </h2>
-                <p class="subtitle">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In enim consequuntur, rem iusto soluta quos esse rerum. Numquam?
-                </p>
+                <h1 class="section-title mb-11">
+                    News
+                </h1>
             </div>
             <div class="grid lg:grid-cols-4 gap-8">
                 <div class="bg-light-tail-100 dark:bg-dark-navy-500 p-6 rounded-2xl">

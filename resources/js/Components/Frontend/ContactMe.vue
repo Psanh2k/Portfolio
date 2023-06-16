@@ -4,8 +4,6 @@
       <div class="flex flex-col items-center text-center">
         <h2 class="section-title">Contact Me</h2>
         <p class="subtitle">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.Rerum assumenda
-          veritatis unde perferendis voluptates dolorem neque?
         </p>
       </div>
       <div class="flex flex-col lg:flex-row lg:gap-x-8">
@@ -66,22 +64,44 @@
             </div>
           </div>
         </div>
-        <form class="space-y-8 w-full max-w-md" action="">
+        <form @submit.prevent="submit" class="space-y-8 w-full max-w-md" action="">
             <div class="flex gap-8">
                 <div>
-                    <input type="text" class="input" placeholder="Your Name"/>
-                    <span class="text-sm m-2 text-red-400">Error</span>
+                    <input v-model="form.name" type="text" class="input" placeholder="Your Name"/>
+                    <span v-if="form.errors.name" class="text-sm m-2 text-red-400">{{ form.errors.name }}</span>
                 </div>
                 <div>
-                    <input type="email" class="input" placeholder="Your Name"/>
+                    <input v-model="form.email" type="email" class="input" placeholder="Your Email"/>
+                    <span v-if="form.errors.email" class="text-sm m-2 text-red-400">{{ form.errors.email }}</span>
                 </div>
             </div>
+            <textarea v-model="form.body" name="" class="textarea" placeholder="Your messages" spellcheck="false"/>
+            <span v-if="form.errors.body" class="text-sm m-2 text-red-400">{{ form.errors.body }}</span>
+            <button class="btn btn-lg bg-accent hover:bg-secondary text-white">
+              Send Message
+            </button>
         </form>
       </div>
     </div>
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+import { useForm } from '@inertiajs/vue3';
+
+const form = useForm({
+  name: "",
+  email: "",
+  body: ""
+})
+
+const submit = () => {
+  form.post(route('contact'), {
+    onSuccess: () => form.reset(),
+  })
+}
+
+</script>
 
 <style></style>
