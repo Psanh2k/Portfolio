@@ -24,13 +24,16 @@ class CreateSkillRequest extends FormRequest
     public function rules()
     {
         return [
-            'image' => [
+            'image'     => [
                 'required',
                 'image',
             ],
-            'name'  => [
+            'title'     => [
                 'required',
                 'min:3',    
+            ],
+            'content'   => [
+                'required',
             ]
         ];
     }

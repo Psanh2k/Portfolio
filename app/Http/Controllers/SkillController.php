@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Skills\CreateSkillRequest;
 use App\Http\Resources\SkillResource;
+use App\Models\Posts;
 use App\Models\Skill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -15,7 +16,7 @@ class SkillController extends Controller
 {
     public function index()
     {
-        $skills = SkillResource::collection(Skill::all());
+        $skills = SkillResource::collection(Posts::all());
         return Inertia::render('Skills/Index', compact('skills'));
     }
 
@@ -27,10 +28,11 @@ class SkillController extends Controller
     public function store(CreateSkillRequest $request)
     {
         if ($request->hasFile('image')) {
-            $image = $request->file('image')->store('skills');
-            Skill::create([
-                'name'  => $request->name,
-                'image' => $image,
+            $image = $request->file('image')->store('posts');
+            Posts::create([
+                'title'     => $request->title,
+                'image'     => $image,
+                'content'   => $request->content,
             ]);
 
             return Redirect::route('skills.index');
@@ -39,9 +41,10 @@ class SkillController extends Controller
         return Redirect::back();
     }
 
-    public function edit(Skill $skill)
+    public function edit(Posts $post)
     {
-        return Inertia::render('Skills/Edit', compact('skill'));
+        dd($post->id);
+        return Inertia::render('Skills/Edit', compact('post'));
     }
 
     public function update(Request $request, Skill $skill)

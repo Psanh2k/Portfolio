@@ -2,25 +2,25 @@
   <Head title="Edit SKill" />
   <AuthenticatedLayout>
     <template #header>
-      <h2 class="font-semibold text-xl text-gray-800 leading-tight">Edit Skill</h2>
+      <h2 class="font-semibold text-xl text-gray-800 leading-tight">Edit post</h2>
     </template>
 
     <div class="py-12">
-      <div class="max-w-md mx-auto sm:px-6 lg:px-8 bg-white">
+      <div class="mx-auto sm:px-6 lg:px-8 bg-white">
         <form class="p-4" @submit.prevent="submit">
           <div>
-            <InputLabel for="name" value="Name" />
+            <InputLabel for="title" value="Title" />
 
             <TextInput
-              id="name"
+              id="title"
               type="text"
               class="mt-1 block w-full"
-              v-model="form.name"
+              v-model="form.title"
               autofocus
-              autocomplete="name"
+              autocomplete="title"
             />
 
-            <InputError class="mt-2" :message="form.errors.name" />
+            <InputError class="mt-2" :message="form.errors.title" />
           </div>
 
           <div class="mt-2">
@@ -35,6 +35,23 @@
 
             <InputError class="mt-2" :message="form.errors.image" />
           </div>
+
+          <div>
+            <InputLabel for="content" value="Content" />
+
+            <textarea
+                rows="15"
+                cols="50"
+                id="content"
+                type="text"
+                class="mt-1 block w-full"
+                v-model="form.content"
+                autofocus
+                autocomplete="content"
+            />
+
+            <InputError class="mt-2" :message="form.errors.content" />
+        </div>
 
           <div class="flex items-center justify-end mt-4">
             <PrimaryButton
@@ -61,19 +78,20 @@ import TextInput from "@/Components/TextInput.vue";
 import { Inertia } from '@inertiajs/inertia';
 
 const props = defineProps({
-  skill: Object,
+  post: Object,
 });
-
 const form = useForm({
-  name: props.skill?.name,
+  title: props.post?.title,
   image: null,
+  content: props.post?.content,
 });
 
 const submit = () => {
-    Inertia.post(`/skills/${props.skill.id}`, {
+    Inertia.post(`/posts/${props.post.id}`, {
         _method: "put",
-        name: form.name,
-        image: form.image,  
+        title   : form.titletitle,
+        image   : form.image,
+        content : form.content,
     });
 };
 </script>
