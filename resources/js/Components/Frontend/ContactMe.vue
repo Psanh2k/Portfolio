@@ -4,7 +4,7 @@
       v-motion :initial="{opacity:0, y:100,}" :visible="{opacity:1, y:0,}"
     >
       <div class="flex flex-col items-center text-center">
-        <h2 class="section-title">Contact Me</h2>
+        <h2 class="section-title">Contact Us</h2>
         <p class="subtitle">
         </p>
       </div>
