@@ -9,15 +9,15 @@
       <div class="mx-auto sm:px-6 lg:px-8 bg-white">
         <form class="p-4" @submit.prevent="submit">
           <div>
-            <InputLabel for="title" value="Title" />
+            <InputLabel for="name" value="name" />
 
             <TextInput
-              id="title"
+              id="name"
               type="text"
               class="mt-1 block w-full"
-              v-model="form.title"
+              v-model="form.name"
               autofocus
-              autocomplete="title"
+              autocomplete="name"
             />
 
             <InputError class="mt-2" :message="form.errors.title" />
@@ -35,7 +35,7 @@
 
             <InputError class="mt-2" :message="form.errors.image" />
           </div>
-
+<!-- 
           <div>
             <InputLabel for="content" value="Content" />
 
@@ -51,7 +51,7 @@
             />
 
             <InputError class="mt-2" :message="form.errors.content" />
-        </div>
+        </div> -->
 
           <div class="flex items-center justify-end mt-4">
             <PrimaryButton
@@ -78,20 +78,18 @@ import TextInput from "@/Components/TextInput.vue";
 import { Inertia } from '@inertiajs/inertia';
 
 const props = defineProps({
-  post: Object,
+  skill: Object,
 });
 const form = useForm({
-  title: props.post?.title,
+  name: props.skill?.name,
   image: null,
-  content: props.post?.content,
 });
 
 const submit = () => {
-    Inertia.post(`/posts/${props.post.id}`, {
+    Inertia.post(`/skills/${props.skill.id}`, {
         _method: "put",
-        title   : form.titletitle,
+        name    : form.name,
         image   : form.image,
-        content : form.content,
     });
 };
 </script>

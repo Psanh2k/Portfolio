@@ -28,13 +28,11 @@ class CreateSkillRequest extends FormRequest
                 'required',
                 'image',
             ],
-            'title'     => [
+            'name'     => [
                 'required',
                 'min:3',    
             ],
-            'content'   => [
-                'required',
-            ]
+
         ];
     }
 }

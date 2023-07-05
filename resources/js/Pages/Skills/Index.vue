@@ -37,9 +37,6 @@
                                     Image
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Content
-                                </th>
-                                <th scope="col" class="px-6 py-3">
                                     Action
                                 </th>
                             </tr>
@@ -50,13 +47,10 @@
                                     {{ skill.id }}
                                 </th>
                                 <td class="px-6 py-4">
-                                    {{ skill.title }}
+                                    {{ skill.name }}
                                 </td>
                                 <td class="px-6 py-4">
                                     <img :src="skill.image" class="w-14 h-14 rounded-full border border-gray-200">
-                                </td>
-                                <td class="px-6 py-4">
-                                    {{ skill.content }}
                                 </td>
                                 <td class="px-6 py-4 flex">
                                     <Link

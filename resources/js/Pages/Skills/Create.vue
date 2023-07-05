@@ -11,18 +11,18 @@
               <div class="mx-auto sm:px-6 lg:px-8 bg-white">
                 <form class="p-4" @submit.prevent="submit">
                     <div>
-                        <InputLabel for="title" value="Title" />
+                        <InputLabel for="name" value="name" />
 
                         <TextInput
-                            id="title"
+                            id="name"
                             type="text"
                             class="mt-1 block w-full"
-                            v-model="form.title"
+                            v-model="form.name"
                             autofocus
-                            autocomplete="title"
+                            autocomplete="name"
                         />
 
-                        <InputError class="mt-2" :message="form.errors.title" />
+                        <InputError class="mt-2" :message="form.errors.name" />
                     </div>
 
                     <div class="mt-2">
@@ -38,7 +38,7 @@
                         <InputError class="mt-2" :message="form.errors.image" />
                     </div>
 
-                    <div>
+                    <!-- <div>
                         <InputLabel for="content" value="Content" />
 
                         <textarea
@@ -53,7 +53,7 @@
                         />
 
                         <InputError class="mt-2" :message="form.errors.content" />
-                    </div>
+                    </div> -->
 
                     <div class="flex items-center justify-end mt-4">
                         <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
@@ -75,9 +75,8 @@ import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 
 const form = useForm({
-    title: "",
+    name: "",
     image: null,
-    content: null,
 });
 
 const submit = () => {

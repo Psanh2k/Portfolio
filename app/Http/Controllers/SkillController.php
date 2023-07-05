@@ -16,7 +16,7 @@ class SkillController extends Controller
 {
     public function index()
     {
-        $skills = SkillResource::collection(Posts::all());
+        $skills = SkillResource::collection(Skill::all());
         return Inertia::render('Skills/Index', compact('skills'));
     }
 
@@ -28,11 +28,10 @@ class SkillController extends Controller
     public function store(CreateSkillRequest $request)
     {
         if ($request->hasFile('image')) {
-            $image = $request->file('image')->store('posts');
-            Posts::create([
-                'title'     => $request->title,
+            $image = $request->file('image')->store('skills');
+            Skill::create([
+                'name'     => $request->name,
                 'image'     => $image,
-                'content'   => $request->content,
             ]);
 
             return Redirect::route('skills.index');
@@ -41,21 +40,21 @@ class SkillController extends Controller
         return Redirect::back();
     }
 
-    public function edit(Posts $post)
+    public function edit(Skill $skill)
     {
-        dd($post->id);
-        return Inertia::render('Skills/Edit', compact('post'));
+        return Inertia::render('Skills/Edit', compact('skill'));
     }
 
     public function update(Request $request, Skill $skill)
     {
-        $image = $skill->image;
+        $image = $request->image;
         $request->validate([
             'name'  => ['required', 'min:3'],
+            'image' => ['required', 'image'],
         ]);
 
         if ($request->hasFile('image')) {
-            Storage::delete($skill->image);
+            Storage::delete($request->image);
             $image = $request->file('image')->store('skills');
         }
       
